@@ -25,7 +25,7 @@ fn main() -> io::Result<()> {
 }
 
 fn play_game<C: Chooser, G: Guesser>() -> io::Result<()> {
-    println!("Welcome to Awakening of Azozoth!");
+    println!("Welcome to Awakening of Azathoth!");
     println!();
     let word_len = prompt("What length word do you want to use? ")?;
     let max_guesses = prompt("How many wrong answers allowed? ")?;
@@ -72,10 +72,10 @@ fn play_game<C: Chooser, G: Guesser>() -> io::Result<()> {
     // game is over, report results
     let word = chooser.get_word();
     if chooser.get_pattern().contains('-') {
-        println!("Azozoth awakens. You lose!");
+        println!("Azathoth awakens. You lose!");
         println!("My word was '{word}'.");
     } else {
-        println!("'{word}' was my word! Azozoth resumes its slumber.");
+        println!("'{word}' was my word! Azathoth resumes its slumber.");
     }
     Ok(())
 }
