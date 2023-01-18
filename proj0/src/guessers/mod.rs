@@ -11,7 +11,7 @@ pub trait Guesser {
 }
 
 fn freq_map(words: &[String]) -> BTreeMap<char, usize> {
-    unimplemented!(); 
+    unimplemented!();
     // TODO: implement this function
-    // you may change the function signature if you like 
+    // you may change the function signature if you like
 }

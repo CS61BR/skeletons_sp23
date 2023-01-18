@@ -1,5 +1,6 @@
 use crate::random::Random;
 
+pub mod cheese_chooser;
 pub mod evil_chooser;
 pub mod random_chooser;
 

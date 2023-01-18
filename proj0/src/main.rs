@@ -4,7 +4,7 @@ use std::{
     time::Instant,
 };
 
-use choosers::{random_chooser::RandomChooser, Chooser};
+use choosers::{cheese_chooser::CheeseChooser, Chooser};
 use guessers::{console_guesser::ConsoleGuesser, Guesser};
 
 use crate::random::Random;
@@ -21,7 +21,7 @@ const LARGE_DICTIONARY_FILE: &str = "data/sorted_scrabble.txt";
 const SMALL_DICTIONARY_FILE: &str = "data/example.txt";
 
 fn main() -> io::Result<()> {
-    play_game::<RandomChooser, ConsoleGuesser>()
+    play_game::<CheeseChooser, ConsoleGuesser>()
 }
 
 fn play_game<C: Chooser, G: Guesser>() -> io::Result<()> {

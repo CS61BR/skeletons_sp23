@@ -11,7 +11,6 @@ fn choose_word(s: &str) -> RandomChooser {
     RandomChooser::new(vec![s.to_owned()], Random::new(""))
 }
 
-
 /// Since RandomChooser should choose words uniformly, check that with 7 possible words,
 /// each one gets chosen at least 100 out of 1000 times. On average, each word
 /// should end up with around 143, so 100 is very conservative

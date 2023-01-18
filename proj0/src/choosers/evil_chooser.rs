@@ -1,9 +1,8 @@
 use super::Chooser;
 
-
 pub struct EvilChooser {
     possible_words: Vec<String>,
-    pattern: String
+    pattern: String,
 }
 
 impl Chooser for EvilChooser {
