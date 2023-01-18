@@ -1,3 +1,5 @@
+use crate::random::Random;
+
 use super::Chooser;
 
 pub struct EvilChooser {
@@ -6,7 +8,7 @@ pub struct EvilChooser {
 }
 
 impl Chooser for EvilChooser {
-    fn new(possible_words: Vec<String>, _random: crate::random::Random) -> Self {
+    fn new(possible_words: Vec<String>, _random: Random) -> Self {
         unimplemented!() // TODO: fill in this method
     }
 

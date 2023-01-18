@@ -5,7 +5,7 @@ use std::{
 };
 
 use choosers::{cheese_chooser::CheeseChooser, Chooser};
-use guessers::{console_guesser::ConsoleGuesser, Guesser};
+use guessers::{console_guesser::ConsoleGuesser, paga_lfg::PagaLFG, Guesser};
 
 use crate::random::Random;
 
@@ -48,6 +48,7 @@ fn play_game<C: Chooser, G: Guesser>() -> io::Result<()> {
         println!("Guesses: {guesses_remaining}");
         println!("Guessed: {:?}", guesses);
         println!("Current: {}", chooser.get_pattern());
+        let mut loop_count = 0;
         let (guess, revealed_count) = loop {
             print!("Your guess? ");
             io::stdout().flush()?;
@@ -56,6 +57,10 @@ fn play_game<C: Chooser, G: Guesser>() -> io::Result<()> {
                 break (g, chooser.make_guess(g));
             }
             println!("Invalid guess.");
+            loop_count += 1;
+            if loop_count > 20 {
+                panic!("Too many invalid guesses!");
+            }
         };
         guesses.push(guess);
         match revealed_count {
